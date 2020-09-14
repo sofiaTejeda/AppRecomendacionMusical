@@ -22,23 +22,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
+        >
+    </androidx.viewpager.widget.ViewPager>
 
     <RelativeLayout
         android:id="@+id/loadingPanel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:progressDrawable="@drawable/circular_progress_bar"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="167dp"
-            tools:layout_editor_absoluteY="327dp" />
-    </RelativeLayout>
+        android:gravity="center"/>
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="60dp"
+        android:clickable="true"
+        android:labelFor="@id/loadingPanel"
+        app:backgroundTint="#F44336"
+        app:tint="#FFFFFF"
+        app:srcCompat="@android:drawable/ic_lock_power_off" />
 </FrameLayout>

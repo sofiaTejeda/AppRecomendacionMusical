@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -16,7 +17,10 @@ import android.widget.ProgressBar;
 import android.widget.TableLayout;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -49,9 +53,9 @@ public class MainActivity extends AppCompatActivity implements Notification.List
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        callHttp=new CallHttp(this);
+        callHttp = new CallHttp(this);
         context = this;
-        pd=  new TransparentProgressDialog(this,R.drawable.loginicon);
+        pd = new TransparentProgressDialog(this, R.drawable.loginicon);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
@@ -62,8 +66,17 @@ public class MainActivity extends AppCompatActivity implements Notification.List
         tableLayout = (TabLayout) findViewById(R.id.tabLayout);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
 
-        spinner = (ProgressBar)findViewById(R.id.progressBar);
-        spinner.setVisibility(View.GONE);
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               FirebaseAuth.getInstance().signOut();
+               Snackbar.make(view, "Sesion Finalizada", Snackbar.LENGTH_LONG)
+                       .setAction("Action", null).show();
+               startActivity(new Intent(MainActivity.this, Login.class));
+               finish();
+           }
+       });
 
         tableLayout.setupWithViewPager(viewPager);
         setUpViewPager(viewPager);

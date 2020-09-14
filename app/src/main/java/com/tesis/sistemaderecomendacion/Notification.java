@@ -11,7 +11,8 @@ public interface Notification {
     }
 
     enum ID {
-        GetData
+        GetData,
+        GetLogin
     }
 
 }

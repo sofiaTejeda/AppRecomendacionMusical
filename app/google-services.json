@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "146857988044",
+    "firebase_url": "https://sistemarecomendaciongrupos.firebaseio.com",
+    "project_id": "sistemarecomendaciongrupos",
+    "storage_bucket": "sistemarecomendaciongrupos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146857988044:android:842731b0f073932c8c1769",
+        "android_client_info": {
+          "package_name": "com.tesis.sistemaderecomendacion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146857988044-i9vo39euhck8ocpo4te5bdkh2hsodrln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tesis.sistemaderecomendacion",
+            "certificate_hash": "a8f0b65e7b03087adabcecb6f38dc0d8a7d0abef"
+          }
+        },
+        {
+          "client_id": "146857988044-3uubutq2fsl5lhtv1db36i314kh358in.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM3jHXvlMDNgajbODh7JAqwf7C4kphrkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146857988044-3uubutq2fsl5lhtv1db36i314kh358in.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

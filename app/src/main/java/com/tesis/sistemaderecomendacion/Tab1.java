@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,8 @@ public class Tab1 extends Fragment implements Notification.Listener,Notification
         recyclerView = view.findViewById(R.id.rv_play_list);
 
         pd.show();
-        callHttp.execute("https://sistemaderecomendacion.herokuapp.com/grupo/getTestRecomendacion");
+        String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        callHttp.execute("https://sistemaderecomendacion.herokuapp.com/grupo/getTestRecomendacion?id="+id);
 
         List<item> mlist = new ArrayList<>();
 
